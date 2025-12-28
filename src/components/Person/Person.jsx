@@ -1,4 +1,5 @@
-const Person = ({ name, age, sex, isMarried, partnerName }) => {
+const Person = ({ person }) => {
+  const { name, age, sex, isMarried, partnerName } = person;
   const getPartnerText = () => {
     if (!isMarried) {
       return 'I am not married';
