@@ -1,18 +1,21 @@
-const Person = ({ person }) => {
+const Person = ({ name, age, sex, isMarried, partnerName }) => {
   const getPartnerText = () => {
-    if (!person.isMarried) {
+    if (!isMarried) {
       return 'I am not married';
     }
 
-    const relationship = person.sex === 'm' ? 'wife' : 'husband';
+    // eslint-disable-next-line prettier/prettier
+    const relationship = sex === 'm'
+      ? 'wife'
+      : 'husband';
 
-    return `${person.partnerName} is my ${relationship}`;
+    return `${partnerName} is my ${relationship}`;
   };
 
   return (
     <section className="Person">
-      <h2 className="Person__name">My name is {person.name}</h2>
-      {person.age && <p className="Person__age">I am {person.age}</p>}
+      <h2 className="Person__name">My name is {name}</h2>
+      {age && <p className="Person__age">I am {age}</p>}
       <p className="Person__partner">{getPartnerText()}</p>
     </section>
   );
