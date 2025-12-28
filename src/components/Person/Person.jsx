@@ -1,4 +1,4 @@
-export const Person = ({ person }) => {
+const Person = ({ person }) => {
   const getPartnerText = () => {
     if (!person.isMarried) {
       return 'I am not married';
@@ -17,3 +17,5 @@ export const Person = ({ person }) => {
     </section>
   );
 };
+
+export default Person;
